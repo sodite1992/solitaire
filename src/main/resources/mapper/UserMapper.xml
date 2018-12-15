@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wkgao.solitaire.mvc.dao.UserMapper">
+    
+    <resultMap type="com.wkgao.solitaire.mvc.entity.User" id="BaseResultMap">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="age"    column="age"    />
+        <result property="email"    column="email"    />
+    </resultMap>
+	
+	<sql id="selectUserVo">
+        select id, name, age, email from user
+    </sql>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from user
+    </select>
+
+    
+</mapper>

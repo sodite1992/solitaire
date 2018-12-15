@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="用于学习的springboot框架系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--添加数据到header请求头中-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>solitaire</title>
+    <link href="../static/css/font-awesome.min.css" th:href="@{css/font-awesome.min.css}" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="icon" href="../img/favicon.ico" th:href="@{img/favicon.ico}"><!--设置网站图标-->
+    <link href="../static/login.css" th:href="@{css/login.css}" rel="stylesheet">
+    <script>
+        if(window.top!==window.self){window.top.location=window.location};   /*如果该窗口不是顶层窗口，在顶层窗口打开当前页面*/
+    </script>
+</head>
+<body>
+    <div class="signinpanel">
+        <div class="row">
+            <!--<div class="col-sm-5">
+                <form id="signupForm">
+                    <h4 class="no-margins">登录：</h4>
+                    <p class="m-t-md">Be happy.</p>
+                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
+                    <input type="password" name="password" class="form-control pword m-b" placeholder="密码"   value="admin123" />
+                    &lt;!&ndash;<div class="row" th:if="${captchaEnabled==true}">
+                        <div class="col-xs-6">
+                            <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5">
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="javascript:void(0);" title="点击更换验证码">
+                                <img th:src="@{captcha/captchaImage(type=${captchaType})}" class="imgcode" width="85%"/>
+                            </a>
+                        </div>
+                    </div>&ndash;&gt;
+                    <input class="i-checks" type="checkbox" name="rememberme" />&nbsp;&nbsp;记住我
+                    <button class="btn btn-success btn-block" id="btnSubmit" data-loading="正在验证登录，请稍后...">登录</button>
+                </form>
+            </div>-->
+            <div class="col-md-5 col-md-offset-1">
+
+                <form class="signup-form" id="signupForm">
+
+                    <h2 class="text-center">登陆系统</h2>
+
+                    <hr>
+
+                    <!--<div class="form-group">
+
+                        <input type="text" class="form-control" placeholder="Login Name" required="required">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="email" class="form-control" placeholder="Email Address" required="required">
+
+                    </div>-->
+
+                    <div class="form-group">
+
+                        <input type="text" id="username" name="username" class="form-control" placeholder="User Name" required="required">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input class="i-checks" type="checkbox" name="rememberme" />&nbsp;&nbsp;记住我
+
+                    </div>
+
+                    <div class="form-group text-center">
+
+                        <button type="submit" id="btnSubmit" class="btn btn-blue btn-block" data-loading="验证登录中，请稍后...">LOGIN IN</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <!--<div class="signup-footer">
+            <div class="pull-left">
+                &copy; 2018 All Rights Reserved. RuoYi <br>
+                <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">粤ICP备18046899号</a><br>
+            </div>
+        </div>-->
+    </div>
+</body>
+
+<script src="../static/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="../static/js/jquery.validate.min.js" th:src="@{/js/jquery.validate.min.js}"></script>
+<script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="../static/js/login.js" th:src="@{/js/login.js}"></script>
+<script src="../static/js/solitaire.js" th:src="@{/js/solitaire.js}"></script>
+<script src="../static/js/jquery.blockUI.js" th:src="@{/js/jquery.blockUI.js}"></script>
+<script src="../static/js/jquery.form.js" th:src="@{/js/jquery.form.js}"></script>
+</html>

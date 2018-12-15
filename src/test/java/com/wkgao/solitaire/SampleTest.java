@@ -1,0 +1,38 @@
+package com.wkgao.solitaire;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.wkgao.solitaire.mvc.dao.UserMapper;
+import com.wkgao.solitaire.mvc.entity.User;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.sql.Wrapper;
+import java.util.List;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = SolitaireApplication.class)
+public class SampleTest {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Test
+    public void testSelect() {
+        System.out.println(("---------- selectAll method test -----------"));
+        /*List<User> userList = userMapper.selectAll();
+        Assert.assertEquals(5, userList.size());
+        userList.forEach(System.out::println);*/
+        PageHelper.startPage(1, 3);
+        //List<User> list = userMapper.selectAll();
+        List<User> list = userMapper.findAll();
+        PageInfo<User> pageInfo = new PageInfo<User>(list);
+        List<User> users = userMapper.selectAll();
+        list.forEach(System.out::println);
+    }
+
+}
